@@ -12,22 +12,22 @@ import java.io.File;
 
 public class Editor {
     public EventManager events;
-    private File file;
+    private File archivo;
 
     public Editor() {
-        this.events = new EventManager("open", "save");
+        this.events = new EventManager("abrir", "guardar");
     }
 
-    public void openFile(String filePath) {
-        this.file = new File(filePath);
-        events.notify("open", file);
+    public void abrirarchivo(String filePath) {
+        this.archivo = new File(filePath);
+        events.notificacion("abrir", archivo);
     }
 
-    public void saveFile() throws Exception {
-        if (this.file != null) {
-            events.notify("save", file);
+    public void guardararchivo() throws Exception {
+        if (this.archivo != null) {
+            events.notificacion("guardar", archivo);
         } else {
-            throw new Exception("Please open a file first.");
+            throw new Exception("Primero abra un archivo.");
         }
     }
 }

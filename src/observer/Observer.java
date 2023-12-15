@@ -14,12 +14,12 @@ public class Observer {
     
     public static void main(String[] args) {
         Editor editor = new Editor();
-        editor.events.subscribe("open", new LogOpenListener("/path/to/log/file.txt"));
-        editor.events.subscribe("save", new EmailNotificationListener("admin@example.com"));
+        editor.events.suscripcion("abrir", new LogOpenListener("/path/to/log/file.txt"));
+        editor.events.suscripcion("guardar", new EmailNotificationListener("drel@gmail.com"));
 
         try {
-            editor.openFile("test.txt");
-            editor.saveFile();
+            editor.abrirarchivo("test.txt");
+            editor.guardararchivo();
         } catch (Exception e) {
             e.printStackTrace();
         }

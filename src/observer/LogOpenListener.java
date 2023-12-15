@@ -11,14 +11,14 @@ package observer;
 import java.io.File;
 
 public class LogOpenListener implements EventListener {
-    private File log;
+    private File registro;
 
-    public LogOpenListener(String fileName) {
-        this.log = new File(fileName);
+    public LogOpenListener(String nombre_archivo) {
+        this.registro = new File(nombre_archivo);
     }
 
     @Override
-    public void update(String eventType, File file) {
-        System.out.println("Save to log " + log + ": Someone has performed " + eventType + " operation with the following file: " + file.getName());
+    public void actualizacion(String tipo_evento, File archivo) {
+        System.out.println("Guardar en el registro " + registro + ": Alguien ha realizado la operación " + tipo_evento + " con el siguiente archivo: " + archivo.getName());
     }
 }

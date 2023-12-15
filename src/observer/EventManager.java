@@ -24,20 +24,20 @@ public class EventManager {
         }
     }
 
-    public void subscribe(String eventType, EventListener listener) {
-        List<EventListener> users = listeners.get(eventType);
+    public void suscripcion(String tipo_evento, EventListener listener) {
+        List<EventListener> users = listeners.get(tipo_evento);
         users.add(listener);
     }
 
-    public void unsubscribe(String eventType, EventListener listener) {
-        List<EventListener> users = listeners.get(eventType);
+    public void cancelar_suscrib(String tipo_evento, EventListener listener) {
+        List<EventListener> users = listeners.get(tipo_evento);
         users.remove(listener);
     }
 
-    public void notify(String eventType, File file) {
-        List<EventListener> users = listeners.get(eventType);
+    public void notificacion(String tipo_evento, File archivo) {
+        List<EventListener> users = listeners.get(tipo_evento);
         for (EventListener listener : users) {
-            listener.update(eventType, file);
+            listener.actualizacion(tipo_evento, archivo);
         }
     }
 }
